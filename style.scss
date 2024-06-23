@@ -1,3 +1,4 @@
+// Membuat variable
 $light-color: #f7fafc;
 $indigo-color: #3c366b;
 $gray-color: #4a5568;
@@ -6,24 +7,46 @@ $gray: #718096;
 $red-color: #e74c3c;
 $black-color: #000;
 $font-stack: Helvetica, sans-serif;
-
+body {
+  font: 100% $font-stack;
+}
 nav {
-  background-color: $indigo-color;
+  background-color: $light-color;
   height: 50px;
+  // Nesting
+  a {
+    display: block;
+    float: left;
+    color: $gray-color;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    img {
+      width: 145px;
+      height: 30px;
+    }
+    &:hover {
+      background-color: $light-gray;
+      color: $black-color;
+    }
+  }
+  .right {
+    float: right;
+  }
 }
 header {
   background-color: $light-color;
   height: 150px;
 }
-.about {
+#about {
   background-color: $gray;
   height: 100px;
 }
-.product {
+#product {
   background-color: $red-color;
   height: 100px;
 }
-.contact {
+#contact {
   background-color: $light-gray;
   height: 100px;
 }
