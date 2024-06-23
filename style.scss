@@ -8,8 +8,10 @@ $red-color: #e74c3c;
 $black-color: #000;
 $font-stack: Helvetica, sans-serif;
 body {
+  box-sizing: border-box;
   font: 100% $font-stack;
 }
+// Navigasi bar
 nav {
   background-color: $light-color;
   height: 50px;
@@ -34,9 +36,60 @@ nav {
     float: right;
   }
 }
+// Header
 header {
-  background-color: $light-color;
-  height: 150px;
+  background: url('img/5.jpg') no-repeat center / cover;
+  height: 400px;
+  border-top: 3px solid $indigo-color;
+  border-bottom: 3px solid $indigo-color;
+}
+.text-header {
+  padding: 20px;
+  text-align: center;
+  hr {
+    width: 50%;
+    margin-bottom: 15px;
+    border-color: $light-gray;
+  }
+  p {
+    color: $light-gray;
+    margin-bottom: 50px;
+    font-size: 20px;
+  }
+}
+// Mixin
+@mixin judul($color, $shadow) {
+  color: $color;
+  margin-bottom: 10px;
+  font-size: 30px;
+  font-weight: 700;
+  text-shadow: 1px 1px 1px $shadow;
+}
+// Include / Memanggil mixin judul
+.judul-header {
+  @include judul($light-gray, $gray);
+}
+// Inheritance
+%button-basic {
+  color: $light-color;
+  padding: 15px;
+  border: none;
+  border-radius: 8px;
+  text-align: center;
+  text-decoration: none;
+  cursor: pointer;
+  font: 18px 'Poiret one', cursive;
+  &:hover {
+    opacity: 0.8;
+  }
+}
+.button-one {
+  @extend%button-basic;
+  background-color: $red-color;
+}
+.button-two {
+  @extend%button-basic;
+  background-color: $gray;
 }
 #about {
   background-color: $gray;
