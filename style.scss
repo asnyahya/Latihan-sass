@@ -1,0 +1,33 @@
+$light-color: #f7fafc;
+$indigo-color: #3c366b;
+$gray-color: #4a5568;
+$light-gray: #ddd;
+$gray: #718096;
+$red-color: #e74c3c;
+$black-color: #000;
+$font-stack: Helvetica, sans-serif;
+
+nav {
+  background-color: $indigo-color;
+  height: 50px;
+}
+header {
+  background-color: $light-color;
+  height: 150px;
+}
+.about {
+  background-color: $gray;
+  height: 100px;
+}
+.product {
+  background-color: $red-color;
+  height: 100px;
+}
+.contact {
+  background-color: $light-gray;
+  height: 100px;
+}
+footer {
+  background-color: $black-color;
+  height: 75px;
+}
