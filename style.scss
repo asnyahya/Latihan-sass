@@ -91,9 +91,52 @@ header {
   @extend%button-basic;
   background-color: $gray;
 }
+// About
 #about {
-  background-color: $gray;
-  height: 100px;
+  background-image: linear-gradient(45deg, $indigo-color, $light-gray);
+  height: 400px;
+  text-align: center;
+  padding: 20px;
+  // Nesting
+  img {
+    width: 300px;
+    height: 300px;
+    border-radius: 100%;
+  }
+  h1 {
+    color: $red-color;
+    font-size: 40px;
+    font-weight: 700;
+    text-shadow: 1px 1px 1px $light-color;
+  }
+  h2 {
+    color: $light-gray;
+    font-size: 30px;
+    font-weight: 700;
+    line-height: 0.5;
+  }
+  p {
+    color: $light-gray;
+    font-size: 20px;
+  }
+}
+.grid-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  margin-top: 30px;
+  padding: 10px;
+}
+// Mixin
+@mixin item($start, $end) {
+  grid-column-start: $start;
+  grid-column-end: $end;
+}
+// Memanggil mixin item
+.item-satu {
+  @include item(1, 2);
+}
+.item.dua {
+  @include item(2, 3);
 }
 #product {
   background-color: $red-color;
