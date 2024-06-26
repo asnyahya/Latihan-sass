@@ -57,7 +57,7 @@ header {
     font-size: 20px;
   }
 }
-// Mixin
+// Mixin Judul
 @mixin judul($color, $shadow) {
   color: $color;
   margin-bottom: 10px;
@@ -69,7 +69,7 @@ header {
 .judul-header {
   @include judul($light-gray, $gray);
 }
-// Inheritance
+// Inheritance untuk button style
 %button-basic {
   color: $light-color;
   padding: 15px;
@@ -113,7 +113,6 @@ header {
     color: $light-gray;
     font-size: 30px;
     font-weight: 700;
-    line-height: 0.5;
   }
   p {
     color: $light-gray;
@@ -139,8 +138,42 @@ header {
   @include item(2, 3);
 }
 #product {
-  background-color: $red-color;
-  height: 100px;
+  background-color: $indigo-color;
+  .judul-product {
+    @include judul($red-color, $gray);
+  }
+}
+.product-body {
+  display: flex;
+  justify-content: space-around;
+  align-items: stretch;
+  margin-top: 10px;
+}
+// Inheritance untuk image style
+%image-style {
+  display: block;
+  padding: 10px;
+  margin: auto;
+  border-radius: 25px;
+}
+.product-item {
+  background-color: $light-color;
+  color: $gray;
+  width: 340px;
+  margin: 15px;
+  border-radius: 10px;
+  img {
+    @extend%image-style;
+    width: 90%;
+  }
+  .product-content {
+    padding: 20px;
+    text-align: justify;
+  }
+  .product-footer {
+    padding: 20px;
+    margin-bottom: 10px;
+  }
 }
 #contact {
   background-color: $light-gray;
