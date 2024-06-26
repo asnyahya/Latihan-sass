@@ -203,6 +203,10 @@ header {
   }
 }
 footer {
-  background-color: $black-color;
+  background-color: $light-color;
   height: 75px;
+  padding: 10px;
+  .text-header p {
+    color: $gray-color;
+  }
 }
